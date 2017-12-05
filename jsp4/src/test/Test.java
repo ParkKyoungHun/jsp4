@@ -10,12 +10,12 @@ public class Test {
 		List<Map<String, String>> list = new ArrayList<Map<String,String>>();
 		
 		Map<String, String> m = new HashMap<String, String>();
-		m.put("ÀÌ¸§","È«±æµ¿");
-		m.put("³ªÀÌ", "33»ì");
+		m.put("ï¿½Ì¸ï¿½","È«ï¿½æµ¿");
+		m.put("ï¿½ï¿½ï¿½ï¿½", "33ï¿½ï¿½");
 		list.add(m);
 		Map<String, String> m2 = new HashMap<String, String>();
-		m2.put("ÀÌ¸§","±è±æµ¿");
-		m2.put("³ªÀÌ", "22»ì");
+		m2.put("ï¿½Ì¸ï¿½","ï¿½ï¿½æµ¿");
+		m2.put("ï¿½ï¿½ï¿½ï¿½", "22ï¿½ï¿½");
 		list.add(m2);
 		
 		System.out.println(list.size());

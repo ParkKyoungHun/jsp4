@@ -7,6 +7,8 @@
 <title>Login</title>
 </head>
 <body>
+<%!
+%>
 <!-- 수정수정수정!! -->
 <script>
 function checkValue(){
