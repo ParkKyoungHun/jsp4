@@ -38,6 +38,7 @@ public class UserServlet extends HttpServlet{
 		res.setContentType("text/html;charset=utf-8");
 		PrintWriter out = res.getWriter();
 		String cmd = req.getParameter("cmd");
+		System.out.println(req.getRequestURI());
 		if(cmd==null) {
 			res.sendRedirect("/error.jsp");
 		}else if(cmd.equals("list")) {
