@@ -13,6 +13,7 @@
 		<td><a href="#">로그인</a></td>
 		<td><a href="#">회원가입</a></td>
 		<td><a href="#">게시판</a></td>
+		<td><a href="/list.user?cmd=list">유저리스트</a></td>
 	</tr>
 </table>
 <%

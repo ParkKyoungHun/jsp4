@@ -1,4 +1,5 @@
 
+<%@page import="java.util.Iterator"%>
 <%@page import="com.test.jsp.common.ListExam"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -34,15 +35,11 @@ ArrayList<HashMap<String,String>> userList = le.getUserList();
 <%
 for(HashMap<String,String> map : userList){
 	out.println("<tr>");
-	out.println("<td>" + map.get("userno") + "</td>");
-	out.println("<td>" + map.get("username") + "</td>");
-	out.println("<td>" + map.get("userage") + "</td>");
-	out.println("<td>" + map.get("useraddress") + "</td>");
-	out.println("<td>" + map.get("userid") + "</td>");
-	out.println("<td>" + map.get("userpwd") + "</td>");
-	out.println("<td>" + map.get("dino") + "</td>");
-	out.println("<td>" + map.get("diname") + "</td>");
-	out.println("<td>" + map.get("dietc") + "</td>");
+	Iterator<String> it = map.keySet().iterator();
+	while(it.hasNext()){
+		String key = it.next();
+		out.println("<td>" + map.get(key) + "</td>");
+	}
 	out.println("</tr>");
 }
 %>
