@@ -14,7 +14,9 @@ function callback(re){
 }
 function login(){
 	var url = 'list.user';
-	var param = '?cmd=list';
+	var id = document.getElementById("id");
+	var pwd = document.getElementById("pwd");
+	var param = '?cmd=login&id=' + id.value + '&pwd=' + pwd.value;
 	var au = new AjaxUtil(url,param);
 	au.changeCallBack(callback);
 	au.send();

@@ -55,6 +55,18 @@ public class UserServlet extends HttpServlet{
 				html += "</tr>";
 			}
 			out.println(html);
+		}else if(cmd.equals("login")){
+			String id = req.getParameter("id");
+			String pwd = req.getParameter("pwd");
+			if("test".equals(id)) {
+				if("test".equals(pwd)) {
+					out.println("{\"result\":\"ok\"}");
+				}else {
+					out.println("{\"result\":\"no\"}");
+				}
+			}else {
+				out.println("{\"result\":\"no\"}");
+			}
 		}else {
 			res.sendRedirect("/error.jsp");
 		}
