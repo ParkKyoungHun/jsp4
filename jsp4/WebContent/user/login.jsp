@@ -1,3 +1,4 @@
+<%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/common/header.jsp" %>
@@ -9,8 +10,11 @@
 </head>
 <script>
 function callback(re){
-	alert(re);
-	document.getElementById("resutDiv").innerHTML = re;
+	var obj = JSON.parse(re);
+	alert(obj.msg);
+	if(obj.result=='ok'){
+		location.reload();
+	}
 }
 function login(){
 	var url = 'list.user';
@@ -23,12 +27,20 @@ function login(){
 }
 </script>
 <body>
-<div id="resutDiv">
-</div>
+<%
+if(user!=null){
+out.println(user.getUserName() + "님 환영해요~~");
+out.println(user.getUserAge() + "살 이시네요");
+}else{
+%>
+<div id="resutDiv"></div>
 <form method='post' action="/te.login">
 아이디 : <input type="text" name="id" id="id"><br>
 비밀번호 : <input type="password" name="pwd" id="pwd"><br>
 <input type="button" value="login" onclick="login()"> 
 </form>
+<%
+}
+%>
 </body>
 </html>
