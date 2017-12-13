@@ -34,6 +34,8 @@ public class UserServiceImpl implements UserService{
 			ui.setDiNo(rs.getInt("dino"));
 			ui.setUserAge(rs.getInt("userage"));
 		}
+		con.close();
+		con = null;
 		return ui;
 	}
 	public ArrayList<HashMap<String,String>> getUserList(){

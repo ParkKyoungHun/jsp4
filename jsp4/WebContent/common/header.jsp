@@ -9,6 +9,7 @@
 <title>JSP4</title>
 </head>
 <%
+String rootPath = request.getContextPath();
 UserInfo user = null;
 user = (UserInfo) session.getAttribute("user");
 String m2 = "로그인";
@@ -18,66 +19,39 @@ if(user!=null){
 	u2 = "/user/logout.user?cmd=logout";
 }
 %>
-<script>
-var AjaxUtil = function(p_url, p_params, p_method,p_aSync){
-	if(!p_url || p_url.trim()==""){
-		alert("AjaxUtil호출시 url은 필수 입니다.");
-		return;
-	}
-	this.params = p_params;
-	var getHttpXmlObj = function(){
-		if(window.XMLHttpRequest){
-	  		return new XMLHttpRequest();
-	 	}else if(window.ActiveXObject){
-	  		return new ActiveXObject("Microsoft.XMLHTTP");
-	 	}
-		alert("해당 브라우져가  Ajax를 지원하지 않습니다.");
-	}
-	this.xhr = getHttpXmlObj();
-	var method = p_method?p_method:"get";
-	var url = p_url;
-	var aSync = p_aSync?p_aSync:true;
-	this.xhr.callback = null;
-	this.xhr.onreadystatechange=function(){
-   		if (this.readyState==4){
-   			if(this.status==200){
-	   			var result = decodeURIComponent(this.responseText);
-	   			if(this.callback){
-	   				this.callback(result);
-	   			}else{
-	   				alert(result);
-	   			}
-   			}else{
-	   			var result = decodeURIComponent(this.responseText);
-	   			alert(result);
-   			}
-   		}
-	}
-	this.changeCallBack = function(func){
-		this.xhr.callback = func;
-	}
-   	this.xhr.open(method, url+this.params, aSync);
-   	this.send = function(){
-   		this.xhr.send.arguments = this;
-   	   	this.xhr.send();
-   	}
-}
-</script>
+
+<script src="<%=rootPath%>/js/jquery-3.2.1.min.js"></script>
+<script src="<%=rootPath%>/js/ajax_util.js"></script>
+<script src="<%=rootPath%>/ui/btsp3.3.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<%=rootPath%>/ui/btsp3.3.2/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="<%=rootPath%>/ui/btsp3.3.2/css/bootstrap-theme.min.css"/>
+<link rel="stylesheet" href="<%=rootPath%>/ui/common.css"/>
 <body>
-<table border="1">
-	<tr>
-		<td><a href="/index.jsp">home</a></td>
-		<td><a href="<%=u2%>"><%=m2%></a></td>
-		<td><a href="#">회원가입</a></td>
-		<td><a href="#">게시판</a></td>
-		<td><a href="/user/list.jsp">유저리스트</a></td>
-	</tr>
-</table>
-<%
-String str1 = "Name1";
-String str2 = "나이";
-%>
-</body>
-</html>
-
-
+<script>
+$(document).ready(function(){
+	$("table[id='menu'] tr td").click(function(){
+		location.href=this.getAttribute("data-url");
+	})
+})
+</script>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar">home</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">login</a></li>
+            <li><a href="#contact">join us</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<br><br><br>

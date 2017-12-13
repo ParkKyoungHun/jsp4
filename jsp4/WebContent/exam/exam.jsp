@@ -13,36 +13,19 @@
 <title>리스트 테스트</title>
 </head>
 <body>
-<%
-
-ListExam le = new ListExam();
-ArrayList<HashMap<String,String>> userList = le.getUserList();
-
-%>
-
-<table border="1">
-	<tr>
-		<th>유저번호</th>
-		<th><%=str1%></th>
-		<th><%=str2%></th>
-		<th>주소</th>
-		<th>아이디</th>
-		<th>비밀번호</th>
-		<th>부서번호</th>
-		<th>부서이름</th>
-		<th>부서설명</th>
-	</tr>
-<%
-for(HashMap<String,String> map : userList){
-	out.println("<tr>");
-	Iterator<String> it = map.keySet().iterator();
-	while(it.hasNext()){
-		String key = it.next();
-		out.println("<td>" + map.get(key) + "</td>");
+<script>
+var Test = function(){
+	this.name = "박경훈";
+	this.changeName = function(){
+		this.name = "김경훈";
 	}
-	out.println("</tr>");
 }
-%>
-</table>
+
+var t = new Test();
+t.nono = function(){
+	alert("non를 호출했네요??");
+}
+t.nono();
+</script>
 </body>
 </html>
