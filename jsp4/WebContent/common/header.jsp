@@ -39,19 +39,19 @@ $(document).ready(function(){
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar">home</span>
+            <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="<%=rootPath%>/">JSP4</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">login</a></li>
-            <li><a href="#contact">join us</a></li>
+            <li class="active"><a href="<%=rootPath%>/">Home</a></li>
+            <li><a href="<%=rootPath%>/user/login.jsp">login</a></li>
+            <li><a href="<%=rootPath%>/user/join.jsp">join us</a></li>
+            <li><a href="<%=rootPath%>/user/list.jsp">User List</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-<br><br><br>

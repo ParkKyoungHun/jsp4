@@ -74,4 +74,31 @@ public class UserServiceImpl implements UserService{
 		}
 		return al;
 	}
+	
+	public int insertUser(HashMap hm) {
+		int result = 0;
+		DBCon dbCon = new DBCon();
+		try {
+			Connection con = dbCon.getConnection();
+			String sql = "insert into user_info(username,userid,";
+			sql +=" userpwd,userage,useraddress)";
+			sql +=" values(?,?,?,?,?)";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, (String)hm.get("name"));
+			ps.setString(2, (String)hm.get("id"));
+			ps.setString(3, (String)hm.get("pwd"));
+			ps.setString(4, (String)hm.get("age"));
+			ps.setString(5, (String)hm.get("address"));
+			result = ps.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				dbCon.closeCon();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
 }
