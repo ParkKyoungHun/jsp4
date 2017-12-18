@@ -40,11 +40,11 @@ function afterLogin(obj){
 $("#joinBtn").click(function(){
 	var url = "join.user";
 	var params = {};
-	params["id"] = $("#id").val();
-	params["pwd"] = $("#pwd").val();
-	params["name"] = $("#name").val();
-	params["age"] = $("#age").val();
-	params["address"] = $("#address").val();
+	params["userId"] = $("#id").val();
+	params["userPwd"] = $("#pwd").val();
+	params["userName"] = $("#name").val();
+	params["userAge"] = $("#age").val();
+	params["userAddress"] = $("#address").val();
 	var param = {};
 	param["cmd"] = "join"
 	param["params"] = JSON.stringify(params);
