@@ -7,14 +7,18 @@ function afterLogin(result){
 	var ths = $("table[id='table'] thead tr th");
 	var trStr ="";
 	for(var i=0;i<result.length;i++){
-		trStr +="<tr>";
+		trStr +="<tr data-view='" + result[i].userNo + "'>";
 		for(var j=0;j<ths.length;j++){
 			var th = ths[j].getAttribute("data-field");
-			trStr += "<td class='text-center'>" + result[i][th] + "</td>";
+			trStr += "<td class='text-center' >" + result[i][th] + "</td>";
 		}
 		trStr +="</tr>";
 	}
 	$("#result_tbody").html(trStr);
+	$("tr[data-view]").click(function(){
+		var userNo = this.getAttribute("data-view");
+		location.href="./view.jsp?userno=" + userNo;
+	})
 }
 $(document).ready(function(){
 	var url = "join.user";
