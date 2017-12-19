@@ -52,7 +52,7 @@ if(user!=null &&
 user.getUserNo().toString().equals(request.getParameter("userno"))){
 %>
 		<input type="text" id="checkPwd" name="checkPwd">
-		<button>회원 수정</button><button onclick="deleteUser()">회원탈퇴</button>
+		<button type="button">회원 수정</button><button  type="button" onclick="deleteUser()">회원탈퇴</button>
 <script>
 function afterDelete(result){
 	alert(result.msg);

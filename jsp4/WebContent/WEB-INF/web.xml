@@ -22,4 +22,9 @@
     	<servlet-name>UserServlet</servlet-name>
     	<url-pattern>*.user</url-pattern>
     </servlet-mapping>
+    <context-param>
+    	<description>jsp4</description>
+    	<param-name>jsp4</param-name>
+    	<param-value>제이에스피4</param-value>
+    </context-param>
 </web-app>

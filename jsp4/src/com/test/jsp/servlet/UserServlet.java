@@ -19,7 +19,6 @@ import com.test.jsp.service.UserService;
 import com.test.jsp.service.UserServiceImpl;
 
 public class UserServlet extends HttpServlet{
-
 	UserService us = new UserServiceImpl();
 	
 	public void doGet(HttpServletRequest req,

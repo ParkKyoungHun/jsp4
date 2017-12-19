@@ -2,6 +2,9 @@
 <%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -56,6 +59,8 @@ $(document).ready(function(){
             <li><a href="<%=url%>" class='<%=menu%>'><%=menu%></a></li>
             <li><a href="<%=rootPath%>/user/join.jsp">join us</a></li>
             <li><a href="<%=rootPath%>/user/list.jsp">User List</a></li>
+            <li><a href="<%=rootPath%>/jstl/core_tag.jsp">Jstl Exam</a></li>
+            <li><a href="<%=rootPath%>/jstl/core_tag2.jsp?ct_request=허허">Jstl Exam2</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
