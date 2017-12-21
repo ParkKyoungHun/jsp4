@@ -13,19 +13,13 @@
 <title>리스트 테스트</title>
 </head>
 <body>
-<script>
-var Test = function(){
-	this.name = "박경훈";
-	this.changeName = function(){
-		this.name = "김경훈";
-	}
-}
-
-var t = new Test();
-t.nono = function(){
-	alert("non를 호출했네요??");
-}
-t.nono();
-</script>
+<c:set var="test" value="테스트" scope="page"/>
+<c:set var="s_test" value="세션테스트" scope="session"/>
+<c:set var="a_test" value="어플리케이션테스트" scope="application"/>
+jstl's test : ${test}
+<br>
+session test : ${s_test}
+<br>
+application test : ${a_test}
 </body>
 </html>

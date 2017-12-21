@@ -8,8 +8,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-${ct_test}
-${param.ct_request} 
-${ct_session}
+application : ${ct_application }<br>
+
+<c:forEach var="i" begin="1" end="10" step="1">
+  <c:out value="${i}" />
+
+  <br />
+</c:forEach>
+<%
+  String[] names = { "A","B", "C", "D" };
+request.setAttribute("names", names);
+%>
+<c:forEach var="name" items="${names}">
+  <c:out value="${name}" />
+
+  <br />
+</c:forEach>
 </body>
 </html>

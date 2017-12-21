@@ -13,4 +13,5 @@ public interface UserService {
 	public int insertUser(HashMap hm);
 	public int insertUser(UserInfo ui);
 	public int deleteUser(UserInfo ui);
+	int updateUser(UserInfo ui);
 }

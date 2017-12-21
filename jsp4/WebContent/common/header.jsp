@@ -60,7 +60,7 @@ $(document).ready(function(){
             <li><a href="<%=rootPath%>/user/join.jsp">join us</a></li>
             <li><a href="<%=rootPath%>/user/list.jsp">User List</a></li>
             <li><a href="<%=rootPath%>/jstl/core_tag.jsp">Jstl Exam</a></li>
-            <li><a href="<%=rootPath%>/jstl/core_tag2.jsp?ct_request=허허">Jstl Exam2</a></li>
+            <li><a href="<%=rootPath%>/jstl/core_tag2.jsp?ct_request=huhu">Jstl Exam2</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

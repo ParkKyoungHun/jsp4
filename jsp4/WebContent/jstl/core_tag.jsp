@@ -8,12 +8,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:set var="ct_page2" value="tt"/>
 <c:set var="ct_page" value="난 페이지에서만 가능함" scope="page"/>
 <c:set var="ct_request" value="난 리퀘스트에서 가능함" scope="request"/>
 <c:set var="ct_session" value="난 세션에서 가능하지" scope="session"/>
+<c:set var="ct_application" value="난 어플리케이션" scope="application"/>
 <c:out value="${ct_page}"/><br>
 ${ct_page }
 <br>
 ${ct_request}
+${ct_page2}
 </body>
 </html>
