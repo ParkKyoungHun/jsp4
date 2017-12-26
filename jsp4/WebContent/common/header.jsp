@@ -61,6 +61,7 @@ $(document).ready(function(){
             <li><a href="<%=rootPath%>/user/list.jsp">User List</a></li>
             <li><a href="<%=rootPath%>/jstl/core_tag.jsp">Jstl Exam</a></li>
             <li><a href="<%=rootPath%>/jstl/core_tag2.jsp?ct_request=huhu">Jstl Exam2</a></li>
+            <li><a href="<%=rootPath%>/depart/list">Depart List</a>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
