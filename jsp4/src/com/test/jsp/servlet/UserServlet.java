@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,11 +14,14 @@ import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 import com.test.jsp.dto.UserInfo;
+import com.test.jsp.service.DepartService;
+import com.test.jsp.service.DepartServiceImpl;
 import com.test.jsp.service.UserService;
 import com.test.jsp.service.UserServiceImpl;
 
 public class UserServlet extends HttpServlet{
 	UserService us = new UserServiceImpl();
+	DepartService ds = new DepartServiceImpl();
 	
 	public void doGet(HttpServletRequest req,
 			HttpServletResponse res)throws
@@ -143,6 +145,9 @@ public class UserServlet extends HttpServlet{
 			}
 			Gson gs = new Gson();
 			out.println(gs.toJson(hm));
+		}else if(cmd.equals("dino")){
+			Gson gs = new Gson();
+			out.println(gs.toJson(ds.selectDepartList(null, null)));
 		}else {
 			res.sendRedirect("/error.jsp");
 		}

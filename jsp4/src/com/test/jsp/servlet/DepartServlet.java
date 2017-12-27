@@ -70,6 +70,16 @@ public class DepartServlet extends HttpServlet{
 			}
 			req.setAttribute("msg",msg);
 			uri = "/depart/list";
+		}else if(cmd.equals("update_ok")){
+			DepartInfo di = new DepartInfo();
+			int diNo = Integer.parseInt(req.getParameter("diNo"));
+			String diName = req.getParameter("diName");
+			String diEtc = req.getParameter("diEtc");
+			di.setDiNo(diNo);
+			di.setDiName(diName);
+			di.setDiEtc(diEtc);
+			req.setAttribute("update", ds.updateDepart(di));
+			uri = "/depart/update";
 		}else {
 			uri = "/error";
 		}
