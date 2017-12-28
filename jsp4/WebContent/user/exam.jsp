@@ -4,14 +4,12 @@
 <body>
 <div id="result_div"></div>
 <script>
-	var str = "<table border='1'>";
-	str +="<tr>";
-	str +="<td>하하</td>";
-	str +="<td>하하</td>";
-	str +="<td>하하</td>";
-	str +="</tr>";
-	str +="</table>";
-	$("#result_div").html(str);
+var userList = [{"uiName" : "red","uiAge":30},{"uiName" : "blue","uiAge":20}]
+
+for(var user of userList){
+	document.write("이름 : " + user.uiName + ", 나이 : " + user.uiAge);
+	document.write("<br>");
+}
 </script>
 </body>
 </html>

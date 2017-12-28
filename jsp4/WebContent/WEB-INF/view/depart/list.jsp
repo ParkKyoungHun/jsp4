@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.test.jsp.dto.DepartInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/common/header.jsp" %>
@@ -7,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
+
 <body>
 <div class="container">
 	<br> 
@@ -29,16 +32,22 @@
 			</tr>
 		</thead>
 		<tbody id="result_tbody">
-		<c:forEach items="${departList}" var="dp">
-			<tr >
-				<td onclick="goView(${dp.diNo})">${dp.diNo}</td>
-				<td onclick="goView(${dp.diNo})">${dp.diName}</td>
-				<td onclick="goView(${dp.diNo})">${dp.diEtc}</td>
-				<td>
-				<button type="button" onclick="deleteDi(${dp.diNo})">삭제</button>
-				</td>
-			</tr>
-		</c:forEach>
+		<%
+ArrayList<DepartInfo> departList = (ArrayList<DepartInfo>)request.getAttribute("departList");
+
+for(DepartInfo di : departList){
+%>
+<tr >
+	<td onclick="goView(<%=di.getDiNo()%>)"><%=di.getDiNo()%></td>
+	<td onclick="goView(<%=di.getDiNo()%>)"><%=di.getDiName()%></td>
+	<td onclick="goView(<%=di.getDiNo()%>)"><%=di.getDiEtc()%></td>
+	<td>
+	<button type="button" onclick="deleteDi(<%=di.getDiNo()%>)">삭제</button>
+	</td>
+</tr>
+<%
+}
+%>
 		</tbody>
 	</table>
 	<button type="button" id="diInsertBtn">부서입력</button>
